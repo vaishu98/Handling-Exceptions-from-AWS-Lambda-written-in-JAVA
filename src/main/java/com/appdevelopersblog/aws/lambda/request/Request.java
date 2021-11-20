@@ -1,4 +1,4 @@
-package com.appdevelopersblog.aws.lambda.request;
+package com.appdevelopersblog.aws.lambda.Request;
 
 import com.appdevelopersblog.aws.lambda.model.Student;
 

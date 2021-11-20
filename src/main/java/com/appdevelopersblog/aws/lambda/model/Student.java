@@ -1,18 +1,24 @@
 package com.appdevelopersblog.aws.lambda.model;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+
+@DynamoDBTable(tableName = "Student")
 public class Student {
 
+	@DynamoDBHashKey
 	private int id;
+
+	@DynamoDBAttribute
 	private String name;
-	int age;
-
+	
 	public Student() {
-
+		
 	}
-	public Student(int id , String name, int age) {
+	public Student(int id , String name) {
 		this.id = id;
 		this.name = name;		
-		this.age = age;
 	}
 	public int getId() {
 		return id;
@@ -25,11 +31,5 @@ public class Student {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
 	}
 }
